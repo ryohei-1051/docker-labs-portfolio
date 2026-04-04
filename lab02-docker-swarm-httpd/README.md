@@ -1,7 +1,3 @@
-
-Lab 12 is stronger as a portfolio piece because it adds a 3-node Swarm cluster, a customized `httpd` image, and published service access across the cluster. The lab also explicitly expects image distribution across nodes. 
-
-```markdown
 # Lab 02 – Docker Swarm and Custom httpd Service
 
 ## Overview
