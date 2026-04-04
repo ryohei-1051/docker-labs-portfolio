@@ -23,19 +23,19 @@ This repository documents my Docker learning progression through a series of pra
 
 ## Repository Structure
 
-- `lab11-docker-intro/`  
+- `lab01-docker-intro/`  
   Docker basics, lifecycle commands, notes, and screenshots
 
-- `lab12-docker-swarm-httpd/`  
+- `lab02-docker-swarm-httpd/`  
   Swarm clustering, custom Apache image, service deployment, and verification
 
-- `lab13-docker-compose-wordpress/`  
+- `lab03-docker-compose-wordpress/`  
   Multi-container WordPress stack using Docker Compose
 
-- `lab14-custom-lapp-app/`  
+- `lab04-custom-lapp-app/`  
   Custom Debian/Apache/PHP image with application content
 
-- `bonus-mastodon-selfhosted/`  
+- `lab05-mastodon-selfhosted/`  
   Self-hosted social platform lab using Docker
 
 - `docs/`  
