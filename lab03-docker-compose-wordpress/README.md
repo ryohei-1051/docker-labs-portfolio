@@ -48,3 +48,53 @@ docker compose up -d
 docker compose ps
 docker compose logs -f
 docker compose down
+```
+
+## Example Compose Notes
+
+Key areas I modified:
+
+published port mapping
+environment variable names
+service naming consistency
+resource limits
+volume definitions, if used
+dependency relationships between WordPress and MySQL
+Verification
+
+I considered the lab successful when I could confirm:
+
+`docker-compose.yml` was valid
+`docker compose up -d` completed successfully
+WordPress loaded on the required port
+both services were running
+resource limits were defined as required
+What I Learned
+
+This lab showed the operational value of Docker Compose for local development and repeatable stack deployment. Instead of creating containers one by one, I could define the entire application in YAML and bring it up consistently with one command.
+
+It also reinforced that small configuration mismatches in variable names, ports, or service references can prevent a multi-container stack from starting correctly.
+
+## Problems and Fixes
+Problem
+
+Stack would not come up cleanly on the first attempt
+
+Fix
+
+I reviewed service definitions, variable names, and port mappings until the Compose file was internally consistent.
+
+Problem
+
+Resource settings were easy to overlook
+
+Fix
+
+I documented resource changes separately in `docs/resource-limits.md`.
+
+## Improvements for Personal Lab
+Add named volumes for persistent WordPress and MySQL data
+Add `.env` support for secrets and cleaner configuration
+Add a reverse proxy in front of WordPress
+Add backup and restore steps for the database
+Add health checks and restart policies
