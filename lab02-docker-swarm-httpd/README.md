@@ -72,3 +72,42 @@ docker service create \
   <yourname>-httpd:latest
 
 docker service ps <yourname>-web
+```
+
+## Verification
+
+I considered the lab complete when I could verify all of the following:
+
+Swarm join line was generated successfully
+custom image appeared in docker images
+service replicas were distributed across nodes
+published port was configured correctly
+webpage was reachable from a Swarm IP
+
+## What I Learned
+
+This lab introduced the difference between running a single local container and running a service across a cluster. It also forced me to think about image portability, because local images do not automatically exist on other Swarm nodes unless they are distributed properly.
+
+## Problems and Fixes
+Problem
+
+Image existed only on the manager
+
+Fix
+
+I used `docker save`, `scp`, and `docker load` to distribute the image to each worker.
+
+Problem
+
+Port publishing confusion
+
+Fix
+
+I verified the published port syntax carefully before creating the service.
+
+## Improvements for Personal Lab
+Replace manual image distribution with a private registry
+Add a failure test by shutting down one worker node
+Add rolling update validation
+Add overlay network documentation
+Add a small diagram showing manager and worker roles
