@@ -69,3 +69,45 @@ docker stop deb11-test
 docker rm deb11-test
 
 docker container ls -s -a
+```
+
+## Verification
+
+I considered the lab successful when I could:
+
+list all containers, including stopped ones
+show both container-creation workflows
+connect to running containers successfully
+detach without stopping the container
+display container size information
+
+## What I Learned
+
+This lab helped me understand the difference between image and container state, and between `run`, `create`, `start`, `exec`, and `attach`. It also showed that Docker operations are simple in appearance but depend on understanding container lifecycle clearly.
+
+## Problems and Fixes
+Problem
+
+Confusion between `docker run` and `docker create`
+
+Fix
+
+I separated the workflow into:
+
+image pull
+container creation
+container start
+shell access
+Problem
+
+Different shells inside different images
+
+Fix
+
+I used `/bin/bash` when available and `/bin/sh` for Alpine-based images.
+
+## Improvements for Personal Lab
+Add a comparison table for image size and startup behavior
+Add a script to deploy all test containers automatically
+Add notes on bind mounts and named volumes
+Compare containers with lightweight VMs for learning purposes
