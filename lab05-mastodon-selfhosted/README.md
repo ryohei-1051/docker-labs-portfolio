@@ -49,3 +49,57 @@ Example:
 
 ```bash
 sudo nano /etc/hosts
+```
+Add an entry similar to:
+```bash
+<server-ip> mastodon.yourfakedomain.com
+```
+
+## Example Commands
+```bash
+docker compose up -d
+docker compose ps
+docker compose logs -f
+docker compose down
+```
+
+## Verification
+
+I considered the lab successful when I could verify:
+
+Docker services started successfully
+the Mastodon site loaded in the browser
+account access worked as expected
+a post could be created successfully
+screenshots captured the key steps and final result
+
+## What I Learned
+
+This lab was more realistic than the previous ones because it introduced a platform-style deployment instead of a simple test container. It also showed that self-hosting involves more than just starting containers; it includes naming, access, persistence, and service coordination.
+
+From a portfolio perspective, this is useful because it demonstrates interest in real-world service deployment rather than only isolated command practice.
+
+## Problems and Fixes
+Problem
+
+Hostname resolution in a non-public environment
+
+Fix
+
+I added a local `/etc/hosts` entry on the host system so the Mastodon service name resolved correctly.
+
+Problem
+
+More moving parts than earlier labs
+
+Fix
+
+I documented the setup and verification steps carefully so the deployment would be easier to recreate later.
+
+## Improvements for Personal Lab
+- Add reverse proxy and TLS documentation
+- Document persistent storage paths and backups
+- Add update and rollback procedure
+- Add health monitoring notes
+- Add resource sizing guidance
+- Add a network diagram of Mastodon-related services
