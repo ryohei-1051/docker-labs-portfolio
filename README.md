@@ -43,7 +43,7 @@ This repository documents my Docker learning progression through a series of pra
 
 ## Goals of This Repository
 
-This repository is not only a course archive. It is intended to show:
+This repository is intended to show:
 
 - hands-on Docker administration
 - container lifecycle knowledge
@@ -102,4 +102,3 @@ This repository focuses on rebuilding the labs in a cleaner, more reproducible p
 - add persistent volumes and backup notes
 - add CI workflow for image build validation
 - add security hardening notes for containerized services
-- 
